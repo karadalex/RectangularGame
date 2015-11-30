@@ -26,5 +26,7 @@ for i in range(len(Grid)):
     for j in range(len(Grid[i])):
         if Grid[i][j] == maximum:
             numOfMax += 1
+        else:
+            break
 
 print numOfMax
