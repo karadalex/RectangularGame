@@ -19,24 +19,12 @@ for n in xrange(N):
 
 
 #the cell (1,1) of the board always contains the maximum number
-#the following code is an effort to make an optimized search of maximums throughout Grid
+#searching through all of the entries
 maximum = Grid[0][0]
 numOfMax = 0
-i = 0
-j = 0
-while i <= 1000000:
-    while j <= 1000000:
-        try:
-            if Grid[i][j] == maximum:
-                numOfMax += 1
-        except IndexError:
-            break
-        try:
-            if Grid[i][j+1] < maximum:
-                break
-        except IndexError:
-            break
-        j += 1
-    i += 1
+for i in range(len(Grid)):
+    for j in range(len(Grid[i])):
+        if Grid[i][j] == maximum:
+            numOfMax += 1
 
 print numOfMax
